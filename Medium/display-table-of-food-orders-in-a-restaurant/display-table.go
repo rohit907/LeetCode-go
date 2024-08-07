@@ -47,7 +47,7 @@ func displayTable(orders [][]string) [][]string {
 	header := []string{}
 	header = append(header, "Table")           // Add "Table" as the first header entry
 	tables := []int{}                          // Slice to store unique table numbers
-	foodIndexMapping := make(map[int][]string) // Map to associate table numbers with food items
+	tableNumberFoodMapping := make(map[int][]string) // Map to associate table numbers with food items
 	foodIndex := make(map[string]int)          // Map to track food item indices
 	foodList := []string{}                     // Slice to store unique food items
 
@@ -57,9 +57,9 @@ func displayTable(orders [][]string) [][]string {
 		tableNumber, _ := strconv.Atoi(order[1])
 
 		// Check if the table number already exists in the mapping
-		if _, ok := foodIndexMapping[tableNumber]; !ok {
+		if _, ok := tableNumberFoodMapping[tableNumber]; !ok {
 			// If not, create a new slice for the table and append it to the tables slice
-			foodIndexMapping[tableNumber] = []string{}
+			tableNumberFoodMapping[tableNumber] = []string{}
 			tables = append(tables, tableNumber)
 		}
 
@@ -71,9 +71,9 @@ func displayTable(orders [][]string) [][]string {
 		}
 
 		// Append the food item to the table's food list
-		slice := foodIndexMapping[tableNumber]
+		slice := tableNumberFoodMapping[tableNumber]
 		slice = append(slice, order[2])
-		foodIndexMapping[tableNumber] = slice
+		tableNumberFoodMapping[tableNumber] = slice
 	}
 
 	// Sort the tables and food list
@@ -99,7 +99,7 @@ func displayTable(orders [][]string) [][]string {
 		tmp[0] = tables[i] // Set the table number as the first element
 
 		// Get the food items for the current table
-		foodOntables := foodIndexMapping[tables[i]]
+		foodOntables := tableNumberFoodMapping[tables[i]]
 
 		// Count occurrences of each food item for the current table
 		for _, v := range foodOntables {
