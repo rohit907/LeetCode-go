@@ -66,7 +66,7 @@ func nextHigherNumber(num int) int {
 
 func main() {
 	// fmt.Println(nextHigherNumber(1234)) // Output: 1243
-	// fmt.Println(nextHigherNumber(1223)) // Output: 1232
+	 fmt.Println(nextHigherNumber(1223)) // Output: 1232
 	// fmt.Println(nextHigherNumber(321))  // Output: -1
 	fmt.Println(nextHigherNumber(534978)) // Output: 536479
 }

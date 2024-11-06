@@ -46,4 +46,5 @@ func getNextHighestNumber(num int) int {
 
 func main(){
 	fmt.Println(getNextHighestNumber(134))
+	fmt.Println(getNextHighestNumber(1143))
 }

@@ -33,13 +33,13 @@ func lastStoneWeight(stones []int) int {
 		}
 	}
 	res := 0
-    if MaxHeap.Len() == 1 {
-        res = (*MaxHeap)[0]
-    }
-    return res
+	if MaxHeap.Len() == 1 {
+		res = (*MaxHeap)[0]
+	}
+	return res
 }
 
 func main() {
-	stones := []int{10,4,2,10}
+	stones := []int{10, 4, 2, 10}
 	fmt.Println(lastStoneWeight(stones))
 }
