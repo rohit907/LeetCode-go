@@ -40,6 +40,6 @@ func lastStoneWeight(stones []int) int {
 }
 
 func main() {
-	stones := []int{10, 4, 2, 10}
+	stones := []int{12,7,4,1,8,1}
 	fmt.Println(lastStoneWeight(stones))
 }

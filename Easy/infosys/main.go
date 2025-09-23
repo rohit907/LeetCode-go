@@ -6,17 +6,17 @@ import (
 )
 
 func unique(slice1 []string, slice2 []string) []string {
-	unique := make(map[string]int)
+	unique := make(map[string]struct{})
 	result := []string{}
 	for _, v := range slice1 {
 
 		if _, ok := unique[v]; !ok {
-			unique[v] = 1
+			unique[v] = struct{}{}
 		}
 	}
 	for _, v := range slice2 {
 		if _, ok := unique[v]; !ok {
-			unique[v] = 1
+			unique[v] = struct{}{}
 		}
 	}
 	for k, _ := range unique {
