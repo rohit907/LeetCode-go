@@ -1,9 +1,11 @@
 package main
+
 // Rearrange the elements(balls) such that adjacent elements have an empty
 // Sample - ["b","","","b"] to ["b","","b",""]
 
 import (
 	"fmt"
+
 )
 
 func rearrangeBalls(arr []string) []string {
@@ -49,5 +51,3 @@ func main() {
 		fmt.Printf("Output: %v\n\n", rearrangeBalls(test))
 	}
 }
-
-
